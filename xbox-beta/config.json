@@ -1,0 +1,21 @@
+{
+  "fullscreen": true,
+  "target_fps": 60,
+  "motion_blur": {
+    "enabled": true,
+    "decay": 0.12,
+    "feedback": 0.88
+  },
+  "vibe": {
+    "red": [1.0, 0.15, 0.25],
+    "blue": [0.15, 0.35, 1.0],
+    "intensity": 1.0
+  },
+  "box": {
+    "spin_speed": 0.9,
+    "pulse_speed": 1.2,
+    "line_thickness": 2
+  },
+  "title": "xbox-beta (RED/BLUE vibe)"
+}
+

@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "uvan-zxZ-terminal"
+version = "0.7.0"
+description = "UVAN Hybrid Custom Terminal v7.0 (ZZX)"
+requires-python = ">=3.10"
+license = { text = "GPL-2.0" }
+
+dependencies = [
+  "lupa>=1.14.1",
+]
+
+[tool.setuptools]
+py-modules = []
+
+[tool.pylint]
+# Keep conservative defaults to avoid CI noise.
+max-line-length = 100
+disable = [
+  "missing-module-docstring",
+  "missing-function-docstring",
+  "missing-class-docstring",
+]
+
+[tool.ruff]
+line-length = 100
+

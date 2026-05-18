@@ -1,0 +1,122 @@
+:root {
+  --bg: #0b1020;
+  --card: rgba(255, 255, 255, 0.06);
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.65);
+  --accent: #7c5cff;
+  --border: rgba(255, 255, 255, 0.12);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1200px 800px at 10% -10%, rgba(124, 92, 255, 0.35), transparent),
+              radial-gradient(1000px 700px at 90% 0%, rgba(0, 210, 255, 0.22), transparent),
+              var(--bg);
+  color: var(--text);
+}
+
+.wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 28px 18px 48px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  letter-spacing: -0.02em;
+}
+
+.sub {
+  margin: 0 0 22px;
+  color: var(--muted);
+}
+
+.card {
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 14px;
+  padding: 16px;
+  margin: 14px 0;
+}
+
+h2 {
+  margin: 0 0 12px;
+  font-size: 18px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 160px;
+  resize: vertical;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.2);
+  padding: 12px;
+  color: var(--text);
+  outline: none;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+input[type='text'], input {
+  flex: 1;
+  min-width: 240px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.2);
+  padding: 10px 12px;
+  color: var(--text);
+  outline: none;
+}
+
+button {
+  border: 1px solid rgba(124, 92, 255, 0.35);
+  background: rgba(124, 92, 255, 0.22);
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 650;
+}
+
+button:hover {
+  background: rgba(124, 92, 255, 0.30);
+}
+
+.chk {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--muted);
+  user-select: none;
+}
+
+.chk input { accent-color: var(--accent); }
+
+.out {
+  margin: 12px 0 0;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.22);
+  color: rgba(255, 255, 255, 0.85);
+  overflow: auto;
+  max-height: 260px;
+}
+
+.foot {
+  margin-top: 18px;
+  color: var(--muted);
+}
+
+.foot a { color: var(--accent); }
+

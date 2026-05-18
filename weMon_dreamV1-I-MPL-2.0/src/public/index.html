@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeMon_dreamV1-I-MPL-2.0</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <h1>WeMon_dreamV1-I-MPL-2.0</h1>
+      <p class="sub">Fast hybrid search (in-memory) + semantic deep-indexing demo.</p>
+
+      <section class="card">
+        <h2>Index Corpus</h2>
+        <textarea
+          id="corpus"
+          placeholder="Paste text corpus here..."
+          spellcheck="false"
+        ></textarea>
+        <div class="row">
+          <input id="docId" placeholder="docId (e.g., doc1)" value="doc1" />
+          <button id="btnIndex">Index</button>
+        </div>
+        <pre id="indexOut" class="out" aria-live="polite"></pre>
+      </section>
+
+      <section class="card">
+        <h2>Search</h2>
+        <div class="row">
+          <input id="query" placeholder="Query (prefix*, \"exact phrase\", wildcards supported)" />
+          <button id="btnSearch">Search</button>
+        </div>
+        <div class="row">
+          <label class="chk">
+            <input type="checkbox" id="wildcards" checked />
+            Enable wildcards
+          </label>
+          <label class="chk">
+            <input type="checkbox" id="phrases" checked />
+            Enable phrases
+          </label>
+          <label class="chk">
+            <input type="checkbox" id="prefix" checked />
+            Enable prefix
+          </label>
+        </div>
+        <pre id="searchOut" class="out" aria-live="polite"></pre>
+      </section>
+
+      <footer class="foot">
+        <a href="/health">/health</a>
+      </footer>
+    </main>
+
+    <script>
+      const $ = (id) => document.getElementById(id);
+
+      async function postJson(url, body) {
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify(body),
+        });
+        const text = await res.text();
+        let data;
+        try {
+          data = JSON.parse(text);
+        } catch {
+          data = { raw: text };
+        }
+        return { ok: res.ok, status: res.status, data };
+      }
+
+      $('btnIndex').addEventListener('click', async () => {
+        const corpus = $('corpus').value || '';
+        const docId = $('docId').value || 'doc1';
+        $('indexOut').textContent = 'Indexing...';
+        const r = await postJson('/v1/index', { docId, text: corpus });
+        $('indexOut').textContent = JSON.stringify(r, null, 2);
+      });
+
+      $('btnSearch').addEventListener('click', async () => {
+        const q = $('query').value || '';
+        $('searchOut').textContent = 'Searching...';
+        const r = await postJson('/v1/search', {
+          query: q,
+          features: {
+            wildcard: $('wildcards').checked,
+            phrase: $('phrases').checked,
+            prefix: $('prefix').checked,
+          },
+        });
+        $('searchOut').textContent = JSON.stringify(r.data, null, 2);
+      });
+    </script>
+  </body>
+</html>
+

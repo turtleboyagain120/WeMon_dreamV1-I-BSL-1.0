@@ -1,0 +1,23 @@
+{
+  "name": "weMon_dreamV1-I-MPL-2.0",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "build": "node src/buildIndex.js",
+    "test": "node src/test/smoke.js"
+  },
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "dependencies": {
+    "fastify": "^4.28.1",
+    "@fastify/cors": "^10.0.1",
+    "@fastify/helmet": "^11.0.2",
+    "pino": "^9.0.0",
+    "pino-pretty": "^11.0.0"
+  }
+}
+

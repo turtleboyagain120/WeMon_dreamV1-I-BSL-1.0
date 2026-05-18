@@ -1,0 +1,6 @@
+pyproject.toml
+uvan_zxZ_terminal.egg-info/PKG-INFO
+uvan_zxZ_terminal.egg-info/SOURCES.txt
+uvan_zxZ_terminal.egg-info/dependency_links.txt
+uvan_zxZ_terminal.egg-info/requires.txt
+uvan_zxZ_terminal.egg-info/top_level.txt

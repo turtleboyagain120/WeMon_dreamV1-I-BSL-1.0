@@ -1,0 +1,24 @@
+services:
+  weMon:
+    build:
+      context: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      # Strictly set index + log directories inside container
+      - WE_MON_DATA_DIR=/data
+      - WE_MON_LOG_DIR=/data/logs
+      - WE_MON_READONLY_ON_MISSING_KEYS=true
+      # Optional tuning
+      - WE_MON_MAX_NOISE_WORDS=500
+      - WE_MON_MAX_DOC_TOKENS=400000
+    volumes:
+      # High-speed local mapping (ignored by Git via .gitignore)
+      - ./docker-data:/data
+      # Secrets (optional; if missing engine starts in read-only sandbox)
+      - ./secrets:/secrets:ro
+      # Example dotenv layout (optional, not required)
+      - ./.env:/secrets/.env:ro
+    restart: unless-stopped
+
