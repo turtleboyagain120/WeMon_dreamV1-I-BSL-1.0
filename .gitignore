@@ -1,0 +1,334 @@
+# ==============================================================================
+# 🔒 CRITICAL SECURITY & ENCRYPTED SECRETS 
+# ==============================================================================
+# Environment configurations (Never leak these!)
+.env
+.env.local
+.env.*.local
+*.env
+*.env.*
+config/local.json
+
+# Private cryptographic keys, certificates, and stores
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.pub
+id_rsa
+id_ecdsa
+.ssh/
+known_hosts
+
+# Explicitly block dedicated secure staging locations
+/secrets/
+/private/
+/encrypted/
+
+# ==============================================================================
+# 📦 NODE.JS, NPM, & PNPM SPECIFIC
+# ==============================================================================
+# Dependency directories
+node_modules/
+jspm_packages/
+.npm/
+
+# pnpm package manager directories
+.pnpm-store/
+.pnpm-debug.log*
+
+# Troubleshooting Logs
+*.log
+logs/
+tmp/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+pnpm-debug.log*
+
+# Common framework and testing outputs
+/dist/
+/build/
+/out/
+build/
+dist/
+coverage/
+.nyc_output/
+.parcel-cache/
+.cache/
+!.cache/storybook
+.next/
+.nuxt/
+.svelte-kit/
+.expo/
+.vite/
+.serverless/
+.angular/cache/
+.angular-build/
+.sass-cache/
+.cache-loader/
+
+# Lockfiles: Block generic lock files but explicitly KEEP your Node toolchains
+*.lock
+!package-lock.json
+!pnpm-lock.yaml
+!pnpm-lock.json
+
+# JavaScript runtimes
+bun.lockb
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# ==============================================================================
+# 🐋 DOCKER & LOCAL STORAGE VOLUMES
+# ==============================================================================
+*.pid
+*.seed
+.docker/
+docker-data/
+data/
+
+# Keep production infrastructure templates, but ignore your local setup overrides
+docker-compose.override.yml
+
+# ==============================================================================
+# 💻 SYSTEM JUNK / TEXT EDITORS / IDEs
+# ==============================================================================
+# Apple Mac Trash
+.DS_Store*
+._*
+.AppleDouble
+.LSOverride
+Icon
+
+# Windows OS Trash
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs.mm
+Desktop.ini
+$RECYCLE.BIN/
+
+# VS Code layout configuration
+.vscode/
+!.vscode/extensions.json
+.history/
+
+# JetBrains Suite (WebStorm, PyCharm, IntelliJ, etc.)
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Sublime, Vim, and Emacs
+*.sublime-workspace
+*.sublime-project
+*.swp
+*.swo
+*~
+*.elc
+
+# ==============================================================================
+# 🌐 BACKEND EXTRACTION (Python, Go, Java, Rust, etc.)
+# ==============================================================================
+# Python run caches & local virtualenvs
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+ENV/
+env/
+.poetry/
+Pipfile.lock
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.ipynb_checkpoints/
+*.ipynb
+*.egg-info/
+*.pkl
+*.pytorch
+*.pt
+*.pth
+*.ckpt
+
+# Django, Flask & SQLite local development databases
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+instance/
+.webassets-cache
+htmlcov/
+.coverage
+.coverage.*
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+*.mo
+*.pot
+
+# Java / Compiled Binaries
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.zip
+*.tar
+*.tar.gz
+.gradle/
+target/
+.eclipse/
+.project
+.classpath
+
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.out
+
+# Rust
+/target/
+**/Cargo.lock
+
+# Ruby & Rails
+*.gem
+.bundle/
+gemset.
+/log/*.log
+/tmp/
+/db/schema.rb
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# PHP
+/vendor/
+composer.lock
+/.phpunit.result.cache
+
+# C / C++ / CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+Debug/
+Release/
+_xcode/
+
+# ==============================================================================
+# 🖼️ HEAVY MEDIA, ARCHIVES, & GAME ENGINES (Unity/Unreal)
+# ==============================================================================
+# Binary exports
+*.mp4
+*.mkv
+*.webm
+*.mov
+*.avi
+*.mp3
+*.wav
+*.flac
+*.7z
+*.tar.gz
+*.tgz
+*.tar.bz2
+*.zip
+*.rar
+
+# Browser profiles & tooling
+*.crx
+*.xpi
+coverage-final/
+coverage-reports/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.vs/
+
+# Flutter / Mobile / .NET
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+/Pods/
+/ios/build/
+/android/app/build/
+bin/
+obj/
+*.user
+*.sln.iml
+*.mdb
+local.properties
+
+# Unity / Unreal
+Library/
+Temp/
+Build/
+Builds/
+*.csproj
+*.userprefs
+*.vcxproj
+*.uasset
+Saved/
+Intermediate/
+DerivedDataCache/
+*.uatbuild
+*.upluginmanifest
+*.model
+*.weights
+
+# Latex
+*.aux
+*.bbl
+*.blg
+*.brf
+*.idx
+*.ilg
+*.ind
+*.lof
+*.lot
+*.toc
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex.gz(busy)
+*.synctex
+
+# ==============================================================================
+# 🛑 MISC CACHES & TEMPS
+# ==============================================================================
+*.tmp
+*.temp
+*.bak
+*.old
+*.orig
+*.patch
+*.trace
+*.status
+*.stackdump
+*.stacktrace
+.cache/
+.tmp/
+.tmp.*
